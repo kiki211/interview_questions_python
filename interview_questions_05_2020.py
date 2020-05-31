@@ -1,4 +1,4 @@
-#1 How many 12 in str?
+#1 How many 12 in str ?
 
 in_str = "12jlkjlkjkl1212jlkjkl12jlk" # answer 4
 
