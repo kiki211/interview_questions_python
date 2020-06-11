@@ -6,7 +6,7 @@ print("List sorted\t", s_li)
 print("List original\t", li)
 print("List sorted with absolute value\t", s_li2)
 
-li.sort() # changes the original li without createing new variable
+li.sort() # changes the original li without creating new variable
 print("List sorted by creating original variable\t", li)
 
 # Tuple immutable
@@ -16,7 +16,7 @@ print("Tuple\t", s_tup)
 
 
 # Dictonary
-dic = {'d':2, 'q':1, 'a':100, 'z':1}
+dic = {'d': 2, 'q': 1, 'a': 100, 'z': 1}
 s_dic = sorted(dic)
 print(s_dic)
 print(dic)
@@ -27,7 +27,7 @@ def quick_sort(a_list):
     if len(a_list) < 2:
         return a_list
     lesser = quick_sort([x for x in a_list[1:] if x <= a_list[0]])
-    bigger = quick_sort([x for x in a_list[1:] if x >  a_list[0]])
+    bigger = quick_sort([x for x in a_list[1:] if x > a_list[0]])
     return sum([lesser, [a_list[0]], bigger], [])
 
 print("Quick sort:\t", quick_sort(li))
