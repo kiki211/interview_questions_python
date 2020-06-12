@@ -1,13 +1,15 @@
 # 1  Sum of two
 
 # 2 Polindrome
-def polindrome(in_str):
+in_str = 'kayak'
+
+
+def palindrome(in_str):
     if in_str == in_str[::-1]:
         return True
 
 
-in_str = 'kayak'
-print(polindrome(in_str))
+print(palindrome(in_str))
 
 
 # 3 Anagram
@@ -15,6 +17,8 @@ print(polindrome(in_str))
 
 # 4 How many pairs in a string
 one_str = "12345123459087" # 5
+
+
 def pairs(one_str):
     pairs = 0
     bunker = []
@@ -29,22 +33,31 @@ def pairs(one_str):
 
 print(f"{pairs(one_str)} pairs.")
 
-
-
-
-
 # 5 return only unique values and the number of unique values
 
+# 6 Sort odd numbers only
+my_list = [7, 2, 1, 4, 11, 9, 2]  # answer: [1, 2, 7, 4, 9, 11, 2]
 
-# 6 Sort only odd numbers
+
+def sort_odds(input_list):
+    odd_nums = sorted([n for n in input_list if n % 2 != 0])
+    count = 0
+    for i in range(len(input_list)):
+        if input_list[i] % 2 != 0:
+            input_list[i] = odd_nums[count]
+            count += 1
+    return input_list
+
+
+print(sort_odds(my_list))
 
 # 7 Sort a list in O log n
 
 # 8 Return a string and make letter capital if it follows _ or -.
-sentence = "Hello_my_name_is-Unknown."
+sentence = "Hello_my-name_is-Unknown."  #  answer: Hello_My-Name_Is-Unknown.
 
 
-def capitilize_word(sentence):
+def capitalize_word(sentence):
     new_sentence = []
     patterns = ["_", "-"]
     for l in sentence:
@@ -55,7 +68,7 @@ def capitilize_word(sentence):
     return ''.join(new_sentence)
 
 
-print(f"Returning capitalized word following after - and _ here: {capitilize_word(sentence)}")
+print(f"Returning capitalized word following after - and _ here: {capitalize_word(sentence)}")
 
 
 # 9 How many 21 in string?
