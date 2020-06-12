@@ -1,12 +1,13 @@
 # 1  Sum of two
 
-# 2 Polindrome
+# 2 Palindrome
 in_str = 'kayak'
 
 
 def palindrome(in_str):
     if in_str == in_str[::-1]:
-        return True
+        return f"{in_str} is a palindrome."
+    return f"{in_str} is not a palindrome."
 
 
 print(palindrome(in_str))
