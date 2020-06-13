@@ -14,10 +14,22 @@ print(palindrome(in_str))
 
 
 # 3 Anagram
+word1 = "cinema"
+word2 = "iceman"
+
+def anagram(word1, word2):
+    if len(word1) == len(word2):
+        if sorted(word1) == sorted(word2):
+            return f"The words {word1} and {word2} are anagrams."
+    return "False, not anagrams."
+
+
+print(anagram(word1, word2))
+
 
 
 # 4 How many pairs in a string
-one_str = "12345123459087" # 5
+one_str = "12345123459087"  # 5
 
 
 def pairs(one_str):
@@ -55,19 +67,25 @@ print(sort_odds(my_list))
 # 7 Sort a list in O log n
 
 # 8 Return a string and make letter capital if it follows _ or -.
-sentence = "Hello_my-name_is-Unknown."  #  answer: Hello_My-Name_Is-Unknown.
+sentence = "Hello_my-name_is-Unknown."  # answer: Hello_My-Name_Is-Unknown.
 
 
 def capitalize_word(sentence):
     new_sentence = []
     patterns = ["_", "-"]
-    for l in sentence:
-        if len(new_sentence) > 0 and new_sentence[-1] in patterns:
-            new_sentence.append(l.upper())
-        else:
-            new_sentence.append(l)
-    return ''.join(new_sentence)
+    # for l in sentence:
+    #     if len(new_sentence) > 0 and new_sentence[-1] in patterns:
+    #         new_sentence.append(l.upper())
+    #     else:
+    #         new_sentence.append(l)
+    # return ''.join(new_sentence)
 
+    for l in range(len(sentence)):
+        if l > 0 and sentence[l - 1] in patterns:
+            new_sentence.append(sentence[l].upper())
+        else:
+            new_sentence.append(sentence[l])
+    return ''.join(new_sentence)
 
 print(f"Returning capitalized word following after - and _ here: {capitalize_word(sentence)}")
 
