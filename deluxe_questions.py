@@ -6,17 +6,18 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        required = {}
-        for i in range(len(nums)):
-            if target - nums[i] in required:
-                return [required[target - nums[i]], i]
+        required = dict()
+        for ind in range(len(nums)):
+            if target - nums[ind] in required:
+                return [required[target - nums[ind]], ind]
             else:
-                required[nums[i]] = i
+                required[nums[ind]] = ind
 
 
 input_list = [2, 8, 12, 15]
-ob1 = Solution()
-print(ob1.twoSum(input_list, 20))
+obj1 = Solution()
+print(obj1.twoSum(input_list, target=20))
+
 
 # 2 Palindrome
 in_str = 'kayak'
@@ -151,7 +152,7 @@ def top_three(my_str):
 print(top_three(my_str))
 
 
-# Return only items which have value more than 1 and less than 10
+# 11 Return only items which have value more than 1 and less than 10
 my_dict = {2: 2, 3: 3, 1: 1, 12: 10}
 
 
