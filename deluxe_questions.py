@@ -1,4 +1,22 @@
 # 1  Sum of two
+class Solution(object):
+    def twoSum(self, nums, target):  # returns indices of two nums
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        required = {}
+        for i in range(len(nums)):
+            if target - nums[i] in required:
+                return [required[target - nums[i]], i]
+            else:
+                required[nums[i]] = i
+
+
+input_list = [2, 8, 12, 15]
+ob1 = Solution()
+print(ob1.twoSum(input_list, 20))
 
 # 2 Palindrome
 in_str = 'kayak'
@@ -16,6 +34,7 @@ print(palindrome(in_str))
 # 3 Anagram
 word1 = "cinema"
 word2 = "iceman"
+
 
 def anagram(word1, word2):
     if len(word1) == len(word2):
@@ -47,6 +66,20 @@ def pairs(one_str):
 print(f"{pairs(one_str)} pairs.")
 
 # 5 return only unique values and the number of unique values
+my_list = [7, 2, 9, 9, 1, 4, 11, 9, 2]  # answer:[7,1,4,11,9]
+
+
+def uniques(in_list):
+    unique_items = []
+    for n in in_list:
+        if n in unique_items:
+            unique_items.remove(n)
+        else:
+            unique_items.append(n)
+    return unique_items, f"{len(unique_items)} unique items were found."
+
+
+print(uniques(my_list))
 
 # 6 Sort odd numbers only
 my_list = [7, 2, 1, 4, 11, 9, 2]  # answer: [1, 2, 7, 4, 9, 11, 2]
@@ -87,7 +120,7 @@ def capitalize_word(sentence):
             new_sentence.append(sentence[l])
     return ''.join(new_sentence)
 
-print(f"Returning capitalized word following after - and _ here: {capitalize_word(sentence)}")
+print(f"Returning capitalized words if they follow after - and _ here: {capitalize_word(sentence)}")
 
 
 # 9 How many 21 in string?
@@ -101,3 +134,32 @@ def twenty_1(my_str):
 print(f"21 repeats {twenty_1(my_str)} times in given string.")
 
 
+# 10 Return top repeated 3 items in a string.
+my_str = "Hello world, here we go!"
+
+def top_three(my_str):
+    letters = dict()
+    for l in my_str.lower():
+        if l in letters:
+            letters[l] += 1
+        else:
+            letters[l] = 1
+    return sorted(letters.items(), key=lambda value: value[1], reverse=True)[:3]
+    #return sorted(letters.values(), reverse=True)[:3]  # in case we need to return top values only
+
+
+print(top_three(my_str))
+
+
+# Return only items which have value more than 1 and less than 10
+my_dict = {2: 2, 3: 3, 1: 1, 12: 10}
+
+
+def value_more_than_one(my_dict):
+    answer = dict()
+    for k, v in my_dict.items():
+        if v in range(2, 10):
+            answer[k] = v
+    return answer
+
+print(value_more_than_one(my_dict))
