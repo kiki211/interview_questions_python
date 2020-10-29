@@ -65,7 +65,7 @@ print(sort_me(list_a))
 word = "kayaks"
 def check_polin(word):
     if word == word[::-1]:
-        return "Word is a polandrome"
+        return "Word is a polindrome"
 
 print(check_polin(word))
 
